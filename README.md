@@ -53,16 +53,16 @@ These scripts control the complete simulation workflow:
 
 Coarse-grained molecular models used in the simulations:
 
-- `polymers_FG.data`  
+- `Nup_FG.data`  
   FG-nucleoporin chains forming the NPC barrier
 
-- `wall.data`  
+- `Nuclear_Scaffold.data`  
   Cylindrical pore wall
 
-- `ntf2_lmp_BS.mol`  
+- `NTF2_lmp_BS.mol`  
   NTF2 rigid-body model with binding sites
 
-- `kapB_lmp_BS.mol`  
+- `KapB_lmp_BS.mol`  
   Importin-β rigid-body model
 
 - `atomID.info`  
