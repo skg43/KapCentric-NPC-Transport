@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-# Kap-Centric Transport Through the Nuclear Pore Complex
-**LAMMPS coarse-grained simulations of NTF2 and Importin-β transport**
+# KapCentric-NPC-Transport
+**Coarse-grained LAMMPS simulations of Kap-centric transport through the nuclear pore complex**
 
 This repository contains the exact LAMMPS input files, molecular data, and force-field tables
 used in the study:
@@ -8,9 +7,22 @@ used in the study:
 **Computational Studies of Cargo Transport Through the Nuclear Pore Complex**  
 S. K. Gautam, R. Laghaei, A. Eskandari Nasrabad, R. D. Coalson
 
-The simulations investigate the Kap-centric transport model, focusing on how Importin-β (Kaps)
-regulate the transport of Nuclear Transport Factor 2 (NTF2) through an FG-nucleoporin-lined
-Nuclear Pore Complex (NPC).
+Preprint / manuscript available at:  
+https://www.authorea.com/users/938187/articles/1308335-computational-studies-of-cargo-transport-through-the-nuclear-pore-complex
+
+---
+
+## Overview
+
+The Nuclear Pore Complex (NPC) regulates selective transport between the nucleus and cytoplasm
+via a dense mesh of intrinsically disordered FG-nucleoporins. In this work, we use coarse-grained
+molecular dynamics simulations to investigate the **Kap-centric transport model**, focusing on
+how Importin-β (Karyopherins, Kaps) regulate the transport of Nuclear Transport Factor 2 (NTF2)
+through the NPC.
+
+The simulations demonstrate that Kaps preferentially occupy the center of the pore and actively
+redirect NTF2 molecules into high FG-density regions, leading to enhanced transport flux and
+distinct transport “lanes” within the pore.
 
 ---
 
@@ -20,11 +32,12 @@ All files are kept in a single working directory because multiple LAMMPS input s
 relative paths and `include` statements.
 
 ### LAMMPS input scripts
+
 These scripts control the complete simulation workflow:
 
 - `in.main` – main driver script
 - `in.min` – energy minimization
-- `in.eq` – equilibration run
+- `in.eq` – equilibration
 - `in.prod` – production dynamics
 - `in.global` – global simulation parameters
 - `in.steps` – timestep and run control
@@ -70,8 +83,8 @@ These files implement the 1-bead-per-amino-acid (1-BPA) implicit-solvent force f
 - `dih_PP_lmp.txt`  
   Backbone dihedral potentials
 
-The force field includes hydrophobic interactions, screened electrostatics, cation–π
-interactions, and binding-site interactions between FG motifs and nuclear transport receptors.
+The force field includes hydrophobic interactions, screened electrostatics, cation–π interactions,
+and binding-site interactions between FG motifs and nuclear transport receptors.
 
 ---
 
@@ -100,6 +113,6 @@ scripts. No separate directories are required.
 - All files present in the same directory
 
 ### Run command
+
 ```bash
 lmp_mpi -in in.main
-=======
