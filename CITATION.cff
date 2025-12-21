@@ -1,0 +1,24 @@
+icff-version: 1.2.0
+title: "Kap-Centric Transport Through the Nuclear Pore Complex"
+message: "If you use this repository, please cite the associated manuscript."
+type: software
+authors:
+  - family-names: Gautam
+    given-names: Sanjeev K.
+  - family-names: Laghaei
+    given-names: Rozita
+  - family-names: Eskandari Nasrabad
+    given-names: Afshin
+  - family-names: Coalson
+    given-names: Rob D.
+repository-code: "https://github.com/skg43/KapCentric-NPC-Transport"
+url: "https://www.authorea.com/users/938187/articles/1308335-computational-studies-of-cargo-transport-through-the-nuclear-pore-complex"
+license: MIT
+keywords:
+  - nuclear pore complex
+  - nucleocytoplasmic transport
+  - karyopherin
+  - NTF2
+  - coarse-grained molecular dynamics
+  - LAMMPS
+
