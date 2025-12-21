@@ -1,0 +1,19 @@
+# macOS
+.DS_Store
+**/.DS_Store
+*.icloud
+
+# LAMMPS output
+log.lammps
+*.lammpstrj
+*.dump
+*.restart
+*.bin
+*.rdf
+*.profile
+
+# Editors
+*~
+*.swp
+*.bak
+
