@@ -1,0 +1,22 @@
+
+#####################   units, style, bonds     #####################
+
+units           real
+atom_style      full
+
+#####################   boundary condition      #####################
+
+boundary        p	p	p
+
+#####################   T, time step, RNG       #####################
+
+variable        T       equal   300
+variable        dt1      equal   20
+variable        dt2      equal   30
+variable        rand1   equal   25141
+variable        rand2   equal   13934
+variable        gamma1	equal   50000
+variable	gamma2	equal	1.0
+
+
+#######################################################################

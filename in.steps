@@ -1,0 +1,24 @@
+
+#####################   simulation steps        #####################
+
+variable	nMin		equal	100000
+variable  nEq		equal   10000
+variable  nProd1		equal   15000000
+variable  nProd2		equal   15000000
+
+
+
+#####################   dump files interval     #####################
+
+variable        nTherm          equal   100
+
+variable	nPrint		equal	2000
+variable	nRestart	equal	500000
+
+variable	nMinDmp		equal	50000
+variable        nEqDmp          equal   1000
+variable        nProdDmp        equal  	50000
+variable        nProPolDmp        equal  	30000
+variable				nProkapBDmp			equal 30000
+variable				nProNTF2Dmp			equal 30000
+variable				nProHeadDmp			equal 30000

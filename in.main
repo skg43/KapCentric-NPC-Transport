@@ -1,0 +1,45 @@
+
+include		"in.global"
+
+read_data	Nup_FG.data
+read_data	Nuclear_Scaffold.data		add	merge
+
+include		"in.atoms"
+include		"in.pot"
+include		"in.steps"
+
+################## Create Molecule ##########################
+molecule kapB	KapB_lmp_BS.mol
+molecule ntf2	NTF2_lmp_BS.mol
+
+change_box      all     z       final   -1500.0 1500.0
+
+region ntr1_region block -550.0 550.0 -550.0 550.0 -1450.0 -400.0
+region ntr2_region block -550.0 550.0 -550.0 550.0 500.0 1450.0
+
+create_atoms 0 random 250 2456 ntr1_region mol kapB 6859
+create_atoms 0 random 500 2456 ntr2_region mol ntf2 6859
+
+group	kapB	molecule	162:411
+group	ntf2	molecule	412:911
+
+group   NTR              union          kapB            ntf2
+group pol-kapB-ntf2			 union 					pol 						kapB				ntf2
+
+fix 6 NTR rigid molecule langevin $T $T ${gamma1} ${rand2} 
+
+region forceL1 block -600.0 600.0 -600.0 600.0 -1500.0 -550.0
+region forceL2 block -600.0 600.0 -600.0 600.0 -1200.0 -550.0
+region forceR1 block -600.0 600.0 -600.0 600.0 200.0 1500.0
+region forceR2 block -600.0 600.0 -600.0 600.0 550.0 1200.0
+
+#############################################################
+#:::::::::::::::::::::::  minimization run
+include		"in.min"
+
+#:::::::::::::::::::::::  equilibrium run 
+include		"in.eq"
+
+#:::::::::::::::::::::::  production run
+include		"in.prod"
+

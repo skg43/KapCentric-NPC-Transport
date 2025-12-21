@@ -1,0 +1,19 @@
+#Homogenous interactions
+
+variable        sig1   equal   6.0
+variable        eps1   equal   6.0
+
+#Equation cutoff distance
+
+variable        d_eq    equal   1.122462048     # r at zero force
+
+#Heterogenous interactions
+
+variable    s12   equal   6.0
+variable    e12   equal   6.0
+
+
+#LJ cutoff radii
+
+variable        rc_11 equal   ${sig1}*${d_eq}
+

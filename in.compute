@@ -1,0 +1,25 @@
+compute E_pair dyn group/group kapB pair yes
+variable E_pair equal c_E_pair
+
+compute E_pol dyn group/group dyn molecule inter
+variable E_pol equal c_E_pol
+
+compute E_pol_1 dyn group/group dyn molecule intra
+variable E_pol_1 equal c_E_pol_1
+
+compute E_kapB kapB group/group kapB molecule inter
+variable E_kapB equal c_E_kapB
+
+compute E_kapB_1 kapB group/group kapB molecule intra
+variable E_kapB_1 equal c_E_kapB_1
+
+compute E_ntf2 ntf2 group/group ntf2 molecule inter
+variable E_ntf2 equal c_E_ntf2
+
+compute E_ntf2_1 ntf2 group/group ntf2 molecule intra
+variable E_ntf2_1 equal c_E_ntf2_1
+
+compute E_nond wall  group/group wall pair yes
+variable E_nond equal c_E_nond
+
+fix 11 all print ${nPrint} "${E_pair} ${E_pol} ${E_pol_1} ${E_kapB} ${E_kapB_1} ${E_ntf2} ${E_ntf2_1} ${E_nond}" append info1.log

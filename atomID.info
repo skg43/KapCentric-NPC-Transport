@@ -1,0 +1,33 @@
+#AA 	ID     AA_name
+A 		1  		ALA
+R 		2 		ARG
+N			3  		ASN
+D			4  		ASP
+E			5  		GLU
+Q			6 		GLN
+G			7  		GLY
+H			8  		HIS
+I			9  		ILE
+L			10 		LEU
+K			11 		LYS
+M			12 		MET
+F			13		PHE
+P			14 		PRO
+S			15 		SER
+T			16 		THR
+W			17 		TRP
+Y			18 		TYR
+V			19 		VAL 
+C   	20 	  CYS
+##############################################
+Wall	21		Wall atoms
+##############################################
+G1		22		GLY in FG patch (in polymers)
+F1		23		PHE in FG patch (in polymers)
+##############################################
+BR		24		ARG in Binding Site (in kapB/NTF2)
+BK		25		LYS in Binding Site	(in kapB/NTF2)
+BF		26		PHE in Binding Site	(in kapB/NTF2)
+BY		27		TYR	in Binding Site	(in kapB/NTF2)
+BW		28		TRP in Binding Site	(in kapB/NTF2)
+##############################################

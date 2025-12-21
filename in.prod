@@ -1,0 +1,45 @@
+#### Production #####
+
+reset_timestep 0
+undump 2
+unfix fzR
+unfix fzL
+
+change_box      all     z       final   -1200.0 1200.0
+
+fix fzL NTR addforce 0.0 0.0 0.03 region forceL2
+fix fzR NTR addforce 0.0 0.0 0.03 region forceR2
+
+dump 3 pol-kapB-ntf2  custom ${nProdDmp} dump-prod1.lammpstrj id mol type x y z ix iy iz
+dump_modify 3 sort id
+
+include "in.compute"
+restart ${nRestart} restart.*.prod1
+thermo ${nTherm}
+run ${nProd1}
+
+#####################################################################################################################################
+
+undump 3
+
+dump						4 pol custom ${nProPolDmp} dump-prod-pol.lammpstrj id mol type x y z ix iy iz
+dump_modify     4 sort id 
+
+dump            5 kapB  custom ${nProkapBDmp} dump-prod-kapB.lammpstrj id mol type x y z ix iy iz
+dump_modify     5 sort id 
+
+dump            6 ntf2  custom ${nProNTF2Dmp} dump-prod-ntf2.lammpstrj id mol type x y z ix iy iz
+dump_modify     6 sort id
+
+dump						7 heads custom ${nProHeadDmp} dump-prod-e2e.lammpstrj id mol type x y z ix iy iz
+dump_modify     7 sort id 
+
+
+fix 12 all print ${nPrint} "${E_pair} ${E_pol} ${E_pol_1} ${E_kapB} ${E_kapB_1} ${E_ntf2} ${E_ntf2_1} ${E_nond}" append info2.log
+
+restart ${nRestart} restart.*.prod2
+thermo ${nTherm}
+run ${nProd2}
+
+
+######################################################################################################################################

@@ -1,0 +1,68 @@
+
+#####################   n-monomers, n-chains    #####################
+
+variable	nA    equal   732
+variable	nB    equal   139
+variable	nC    equal   467
+variable	nD    equal   245
+variable	nE    equal   77
+variable        nStart  equal   1
+
+variable	nChains    equal   16
+
+variable	nTA    equal   ${nA}*${nChains}
+variable	nTB    equal   ${nB}*${nChains}
+variable	nTC    equal   ${nC}*${nChains}
+variable	nTD    equal   ${nD}*${nChains}
+variable	nTE    equal   ${nE}*${nChains}
+
+variable	nTot	equal	${nTA}+${nTB}+${nTC}+${nTD}+${nTE}
+
+
+
+#####################	group definitions	#####################
+
+group           graftAL   id      ${nStart}:${nTA}:${nA}
+group           graftBL   id      11713:13936:${nB}
+group           graftCL   id      13937:21408:${nC}
+group           graftDL   id      21409:25328:${nD}
+group           graftEL   id      25329:26560:${nE}
+group           graftAR   id      26561:27792:${nE}
+group           graftBR   id      27793:31712:${nD}
+group           graftCR   id      31713:39184:${nC}
+group           graftDR   id      39185:41408:${nB}
+group           graftER   id      41409:53120:${nA}
+
+group           headAL   id      ${nA}:${nTA}:${nA}
+group           headBL   id      11851:13936:${nB}
+group           headCL   id      14403:21408:${nC}
+group           headDL   id      21653:25328:${nD}
+group           headEL   id      25405:26560:${nE}
+group           headAR   id      26637:27792:${nE}
+group           headBR   id      28037:31712:${nD}
+group           headCR   id      32179:39184:${nC}
+group           headDR   id      39323:41408:${nB}
+group           headER   id      42140:53120:${nA}
+
+#group           graftBL   id      ${nTA}+1:${nTA}+${nTB}:${nB}
+#group           graftCL   id      ${nTA}+${nTB}+1:${nTA}+${nTB}+${nTC}:${nC}
+#group           graftDL   id      ${nTA}+${nTB}+${nTC}+1:${nTA}+${nTB}+${nTC}+${nTD}:${nD}
+#group           graftEL   id      ${nTA}+${nTB}+${nTC}+${nTD}+1:${nTot}:${nE}
+#group           graftAR   id      ${nTot}+1:${nTA}+${nTot}:${nA}
+#group           graftBR   id      ${nTot}+${nTA}+1:${nTot}+${nTA}+${nTB}:${nB}
+#group           graftCR   id      ${nTot}+${nTA}+${nTB}+1:${nTot}+${nTA}+${nTB}+${nTC}:${nC}
+#group           graftDR   id      ${nTot}+${nTA}+${nTB}+${nTC}+1:${nTot}+${nTA}+${nTB}+${nTC}+${nTD}:${nD}
+#group           graftER   id      ${nTot}+${nTA}+${nTB}+${nTC}+${nTD}+1:${nTot}+${nTA}+${nTB}+${nTC}+${nTD}+${nTE}:${nE}
+
+
+group		heads union headAL headBL headCL headDL headEL headAR headBR headCR headDR headER
+group		wall	type	21
+
+group		graft	union graftAL graftBL graftCL graftDL graftEL	graftAR graftBR graftCR graftDR graftER
+
+
+group		nondyn	union	graft wall
+
+group		dyn    subtract    all     nondyn	
+group pol molecule 1:160 
+
