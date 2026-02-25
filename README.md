@@ -8,8 +8,7 @@ used in the study:
 S. K. Gautam, R. Laghaei, A. Eskandari Nasrabad, R. D. Coalson
 
 Preprint / manuscript available at:  
-https://www.authorea.com/users/938187/articles/1308335-computational-studies-of-cargo-transport-through-the-nuclear-pore-complex
-
+https://www.biorxiv.org/content/10.64898/2026.02.23.707554v1.full.pdf
 ---
 
 ## Overview
