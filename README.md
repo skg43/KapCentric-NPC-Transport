@@ -8,7 +8,7 @@ used in the study:
 S. K. Gautam, R. Laghaei, A. Eskandari Nasrabad, R. D. Coalson
 
 Preprint / manuscript available at:  
-https://www.biorxiv.org/content/10.64898/2026.02.23.707554v1.full.pdf
+https://www.biorxiv.org/content/10.64898/2026.02.23.707554v1
 ---
 
 ## Overview
